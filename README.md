@@ -52,6 +52,10 @@ spring data rest
 annotations:
 
 @repository
+@complement
+@springbootapplication
+@complementscan({"com.client"})
+@xmlrootelement
 
 public interface manufacture extends jpaRepository<manufacturer, Long>
 {
@@ -84,6 +88,11 @@ pox.xml:
 packinging to war
 
 run as-> maven build
+
+Change port in application.properties
+
+Server.port = 8080
+
 
 
 
