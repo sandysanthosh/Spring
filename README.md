@@ -28,6 +28,13 @@ get
 put
 post
 delete
+ 
+ReatTemplate rt = new RestTemplate
+
+Person per = rt.getforobject
+        ("Http:localhost:8080/person/1");
+
+Resttemplate will have all methods of rest
 
 spring data respositories
 
