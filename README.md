@@ -27,7 +27,16 @@ postman:
 get
 put
 post
-delete
+delete  
+
+Spring boot 
+
+default by singletion
+Default by autowire id
+
+@component in pojo
+@qualifier by name
+@autowire in class where we are using
  
 ReatTemplate rt = new RestTemplate
 
