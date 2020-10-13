@@ -3,11 +3,47 @@ Spring related questions
 
 Spring MVC sample application:
 
+Spring form Tags:
+
+```
+
+Form 
+
+Input 
+
+Checkbox
+
+Checkboxes
+
+Radiobutton
+
+Radiobuttons
+
+Password 
+
+Select
+
+Option
+
+Options 
+
+Textarea
+
+Hidden
+
+Errors
+
+```
+
 Annotations in controller:
+
+```
 
 @Controller
 @Autowired
 @RequestMapping -> (value="/deleteemp/{id}",method = RequestMethod.GET)
+
+```
 
 RequestMethod:
 
@@ -16,10 +52,13 @@ RequestMethod.POST - update
 
 emp pojo class:
 
+```
 private int id;  
 private String name;  
 private float salary;  
 private String designation;  
+
+```
 
 dao class:
 
@@ -31,7 +70,9 @@ delete
 getEmployeeId
 
 JdbcTemplate template;  
-  
+ 
+```
+
 public void setTemplate(JdbcTemplate template) {  
     this.template = template;  
 } 
@@ -44,6 +85,7 @@ String sql="select * from Emp99 where id=?";
 
 template.update(sql);
 
+```
 
 Spring MVC sample application:
 
@@ -52,12 +94,18 @@ Spring Servlet.xml :
 
 adding jsp in web-inf:
 
+```
+
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 <property name="prefix" value="/WEB-INF/jsp/"></property>
 <property name="suffix" value=".jsp"></property>
 </bean>
 
+``` 
+
 adding dao:
+
+```
 
 <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  
 <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>  
@@ -65,6 +113,8 @@ adding dao:
 <property name="username" value="root"></property>  
 <property name="password" value=""></property>  
 </bean>  
+
+``` 
 
 adding jdbc template:
 
@@ -83,6 +133,7 @@ web.xml:
 
 add dispactcher server
 
+```
 
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>SpringMVC</display-name>
@@ -97,6 +148,7 @@ add dispactcher server
 </servlet-mapping>  
 </web-app>
 
+```
 package names:
 
 beans
@@ -123,12 +175,16 @@ Spring Servlet.xml :
 
 adding jsp in web-inf:
 
+```
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 <property name="prefix" value="/WEB-INF/jsp/"></property>
 <property name="suffix" value=".jsp"></property>
 </bean>
+```
 
 adding dao:
+
+```
 
 <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  
 <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>  
@@ -136,25 +192,27 @@ adding dao:
 <property name="username" value="root"></property>  
 <property name="password" value=""></property>  
 </bean>  
+```
 
 adding jdbc template:
 
+```
 <bean id="jt" class="org.springframework.jdbc.core.JdbcTemplate">
 <property name="dataSource" ref="ds"></property>
 </bean>
-
+```
 adding dao:
-
+```
 <bean id="dao" class="com.javatpoint.dao.EmpDao">
 <property name="template" ref="jt"></property>
 </bean>
 </beans>
-
+```
 web.xml:
 
 add dispactcher server
 
-
+```
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>SpringMVC</display-name>
    <servlet>  
@@ -167,7 +225,7 @@ add dispactcher server
     <url-pattern>/</url-pattern>  
 </servlet-mapping>  
 </web-app>
-
+```
 package names:
 
 beans
@@ -247,7 +305,7 @@ jparepository
 spring data rest 
 
 annotations:
-
+```
 @repository
 @complement
 @springbootapplication
@@ -261,7 +319,7 @@ List<manufacture> findbyactivetrue
 List<manufacture> findbyactive false
 List<manufacture> getallthatsellAcoustics
 }
-
+```
 @RepositoryRestResources(path="companies")
 http:localhost:8080/api/companies
 
